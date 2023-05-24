@@ -1,38 +1,379 @@
-.App {
+button,
+input,
+optgroup,
+select,
+textarea {
+  background-color: transparent;
+  border-width: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  padding: 0;
+}
+
+.body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* aside */
+
+.out,
+.in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.out {
+  width: 320px;
+  height: 320px;
+  background-color: #42bc3f;
+}
+.in {
+  width: 300px;
+  height: 300px;
+  background-color: white;
+}
+.picture {
+  width: 281px;
+  height: 281px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: inherit;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.picture img {
+  width: 100%;
+  height: auto;
+  position: relative;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.profile-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 15px;
+  position: relative;
+}
+.profile-small .out {
+  width: 150px;
+  height: 150px;
+}
+.profile-small .in {
+  width: 140px;
+  height: 140px;
+}
+.profile-small .picture {
+  width: 130px;
+  height: 130px;
+}
+
+.profile-box h1,
+.profile-box h2 {
+  position: relative;
+  padding: 0%;
+  margin: 5%;
+}
+
+.profile-box h1 {
+  top: 10px;
+  left: auto;
+  font-size: 25px;
+  font-weight: 600;
+  color: #5a5a5a;
+  margin: 5px 0;
+}
+
+.profile-box h2 {
+  font-size: 13px;
+  top: px;
+  color: #b4b4b4;
+}
+
+.profile-box .description {
+  text-align: center;
+  padding: 30px;
+  color: #5a5a5a;
+  font-weight: 600;
+  align-items: center;
+}
+
+.button {
+  top: 60px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding-bottom: 0.625rem;
+  padding-top: 0.625rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  border-radius: 10px;
+  background-color: #42bc3f;
+  grid-template-columns: auto auto;
+}
+
+.button:hover {
+  background-color: #11980f;
+}
+
+.container {
+  display: flex;
+}
+
+aside {
+  background-color: #e1d3c3;
+  height: 100vh;
+  position: fixed;
+  width: 370px;
+}
+
+/* main */
+.profile-main {
+  margin-left: 370px;
+  padding: 10px;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.nav {
+  width: 100%;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  position: relative;
+}
+
+.nav ul {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  justify-content: space-between;
+}
+
+.nav li {
+  width: 100%;
+}
+
+.nav ul li button {
+  padding: 10px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+  color: black;
+}
+
+.nav ul li button.selected {
+  background-color: rgba(172, 172, 172, 0.8);
+}
+
+.nav ul li button:hover {
+  background-color: rgba(172, 172, 172, 0.5);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav ul li:first-child button {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav ul li:last-child button {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.post-block {
+  padding-top: 30px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.post-block .small-div {
+  border-radius: 10%;
+  font-size: 30px;
+  text-align: center;
+  background-color: #f5f5f5;
+  height: 230pt;
+  width: 170pt;
+  margin: 20px;
+}
+
+.post-block img {
+  border-top-left-radius: 12%;
+  border-top-right-radius: 12%;
+  max-width: 100%;
+  height: auto;
+}
+.post-block .image-post {
+  min-height: 150px;
+  max-height: auto;
+  width: 100%;
+}
+
+.small-div h5,
+.small-div p {
+  margin: 0%;
+}
+
+.small-div p {
+  font-size: medium;
+}
+
+.green-button {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+}
+.nav .close {
+  width: 70px;
+}
+
+/* /recipe */
+.cover {
+  width: 100%;
+  height: 300px;
+  display: block;
+  position: relative;
+  overflow-x: hidden;
+  background-position: center center;
+  background-size: cover;
+}
+
+.cover img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.recipe-profile {
+  width: 280px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-top: -110px;
+  display: flex;
+  padding-left: 100px;
+}
+
+.recipe-profile img {
+  width: 100%;
+  height: auto;
+}
+
+.out-profile,
+.in-profile {
+  position: relative;
+  border-radius: 50%;
+}
+.out-profile {
+  margin-left: 695px;
+  width: 320px;
+  height: 320px;
+  background-color: #42bc3f;
+}
+.in-profile {
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  /* margin: 10px; */
+}
+
+.recipe-title {
+  margin-top: 100px;
+  margin-left: 200px;
+  width: 300px;
+  font-size: medium;
+  position: absolute;
+}
+
+.recipe-main {
+  display: flex;
+  margin-top: 20px;
+  padding: 0 50px;
+}
+
+.ingredients {
+  width: 320px;
+  display: inline-block;
+  background-color: #e8e8e8;
+  border-radius: 40px;
+  padding-right: 30px;
+}
+
+.ingredients ul {
+  list-style-type: none;
+}
+
+label {
+  font-size: large;
+}
+
+.recipe {
+  margin-right: 0;
+  width: 600px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.recipe p {
+  font-size: large;
+}
+
+.nutrition {
+  width: 150px;
+}
+.nutrition span {
+  display: inline-flex;
+  margin: 30px;
+  width: 60px;
+  height: 40px;
+  background-color: #d2e8b6;
+  text-align: center;
+  color: #3f3f3f;
+  font-size: small;
+}
+
+.recipe-actions {
+  position: fixed;
+  right: 0px;
+  z-index: 199;
+  /* width: 200px; */
+  /* height: 100px; */
+  top: 50%;
+  /* transform: translate(-50%, 0); */
+  background-color: #e8e8e8;
+  padding: 20px;
+  align-items: center;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.action-button {
+  padding: 10px;
+}
+
+.back {
+  margin-top: 0px;
+  margin-left: 20px;
+  font-size: large;
+}
+
+.auth-container {
+  height: auto;
+}
+.auth-background {
+  background-size: cover;
+}
+.foryou-profile {
+  width: 280px;
+  display: flex;
+}
+
+.foryou-profile img {
+  width: 100%;
+  height: auto;
 }
