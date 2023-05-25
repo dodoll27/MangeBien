@@ -40,8 +40,6 @@ export const AuthProvider = ({ children }) => {
     callback();
   };
 
-  console.log(profiles);
-
   const value = { user, signin, signout, register };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
