@@ -1,26 +1,41 @@
 export const profiles = [
   {
+    id: 1,
     name: "Teo",
     status: "Student",
+    email: "teo@me.com",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80",
     isVisible: true,
+    description:
+      "Hi my name is Teo, I am currently trying to pick-up healthier habits. Therefore I want to start a no sugar diet.",
+    tried: [1, 2],
+    saved: [3, 4],
+    made: [1],
   },
   {
+    id: 2,
     name: "Ruxy",
     status: "Student",
+    email: "ruxy@me.com",
     image:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
     isVisible: false,
+    tried: [1, 2, 3],
+    saved: [3, 4],
+    made: [1],
   },
   {
+    id: 3,
     name: "Quentin",
+    email: "quentin@me.com",
     status: "Student",
     image:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
     isVisible: false,
   },
   {
+    id: 4,
     name: "Gabi",
     status: "Student",
     image:
@@ -28,6 +43,7 @@ export const profiles = [
     isVisible: false,
   },
   {
+    id: 5,
     name: "Inga",
     status: "Student",
     image:
@@ -35,6 +51,7 @@ export const profiles = [
     isVisible: false,
   },
   {
+    id: 6,
     name: "Iulian",
     status: "Student",
     image:
@@ -49,7 +66,6 @@ export const posts = [
     image: "/images/food/vegan-chili-croped.jpeg",
     image_full: "/images/food/vegan-chili.jpeg",
     name: "Vegan Chili",
-    creator: "@Ruxy",
     description: "viva mexico",
     type: "tried",
     ingredients: [

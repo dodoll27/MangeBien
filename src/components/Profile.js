@@ -1,10 +1,13 @@
-export const Profile = ({ image, name, status, size, showUserInfo = true }) => {
+import { useAuth } from "../hooks/useAuth";
+
+export const Profile = ({ size, showUserInfo = true }) => {
+  const { user } = useAuth();
   return (
     <div className={`profile-box ${size}`}>
       <div className="out">
         <div className="in">
           <div className="picture">
-            <img src={image} alt="photo" />
+            <img src={user.image} alt="user" />
           </div>
         </div>
       </div>
@@ -12,18 +15,14 @@ export const Profile = ({ image, name, status, size, showUserInfo = true }) => {
       {showUserInfo && (
         <>
           <div className="description">
-            <h1>{name}</h1>
-            <h2>{status}</h2>
+            <h1>{user.name}</h1>
           </div>
           <div className="green-button">
             <button className="button green">Follow</button>
             <button className="button green">Message</button>
           </div>
           <div className="description">
-            <p>
-              "Hi my name is Teo, I am currently trying to pick-up healthier
-              habits. Therefore I want to start a no sugar diet."
-            </p>
+            <p>{user?.description}</p>
           </div>
         </>
       )}

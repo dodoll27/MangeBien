@@ -23,11 +23,7 @@ export const Recipe = () => {
           ></div>
 
           <div className="recipe-profile">
-            <Profile
-              image="/images/profiles/ruxy.jpeg"
-              size="profile-small"
-              showUserInfo={false}
-            />
+            <Profile size="profile-small" showUserInfo={false} />
             <div className="recipe-title">
               <h1>{currentPost.name}</h1>
             </div>

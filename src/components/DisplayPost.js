@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { posts } from "../utils/config";
+import { useAuth } from "../hooks/useAuth";
 
 export const DisplayPost = ({ filterType }) => {
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   const newPosts = filterType
-    ? posts.filter((post) => post.type === filterType)
+    ? posts.filter((post) => user[filterType].includes(post.id))
     : posts;
 
   return (

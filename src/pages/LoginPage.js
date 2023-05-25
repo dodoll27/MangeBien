@@ -1,37 +1,45 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { useForm } from "react-hook-form";
-import { isDisabled } from "@testing-library/user-event/dist/utils";
-import { useState } from "react";
 
 export const LoginPage = () => {
-  const [isDisabled, setIsDisabled] = useState(true);
-  const navigate = useNavigate();
-  const location = useLocation();
   const auth = useAuth();
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const navigate = useNavigate();
+  const { register, handleSubmit } = useForm();
 
-  const from = location.state?.from?.pathname || "/";
+  const loginUser = (values) => {
+    auth.signin(values, () => {
+      navigate("/");
+    });
+  };
 
   return (
     <div className="auth-container">
       <div className="wrapper">
         <div className="auth-form-box">
-          <form className="login-form">
+          <form
+            className="login-form"
+            onSubmit={handleSubmit((data) => loginUser(data))}
+          >
             <h2>Log In</h2>
             <div className="auth-input-group">
               <div className="auth-input-field">
                 <i className="fa-regular fa-envelope"></i>
-                <input type="text" placeholder="E-mail" name="email" />
+                <input
+                  type="email"
+                  placeholder="E-mail"
+                  name="email"
+                  {...register("email")}
+                />
               </div>
               <div className="auth-input-field">
                 <i className="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Password" name="password" />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  {...register("password")}
+                />
               </div>
             </div>
             <div className="auth-input-field">
