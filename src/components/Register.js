@@ -33,6 +33,17 @@ export const Register = () => {
                 <i className="fa-solid fa-lock"></i>
                 <input type="text" placeholder="Name" name="name" />
               </div>
+              <select className="auth-input-field">
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="gluten-free">Gluten Free</option>
+                <option value="mediterranean">Mediterranean</option>
+                <option value="Keto">Keto</option>
+                <option value="intermittent-fasting">
+                  Intermittent fasting
+                </option>
+                <option value="pescarian">Pescarian</option>
+              </select>
               <div className="auth-input-field">
                 <i className="fa-regular fa-envelope"></i>
                 <input type="text" placeholder="E-mail" name="email" />
