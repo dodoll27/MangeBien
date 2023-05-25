@@ -18,28 +18,12 @@ export const LoginPage = () => {
 
   const from = location.state?.from?.pathname || "/";
 
-  function onSubmit(data) {
-    auth.signin(data.username, () => {
-      // Send them back to the page they tried to visit when they were
-      // redirected to the login page. Use { replace: true } so we don't create
-      // another entry in the history stack for the login page.  This means that
-      // when they get to the protected page and click the back button, they
-      // won't end up back on the login page, which is also really nice for the
-      // user experience.
-      navigate(from, { replace: true });
-    });
-  }
-
   return (
     <div className="auth-container">
-      <div
-        className="auth-background"
-        style={{ backgroundImage: "url(/images/thumbnail.jpeg)" }}
-      ></div>
       <div className="wrapper">
         <div className="auth-form-box">
-          <h1>Log In</h1>
-          <form>
+          <form className="login-form">
+            <h2>Log In</h2>
             <div className="auth-input-group">
               <div className="auth-input-field">
                 <i className="fa-regular fa-envelope"></i>
@@ -49,10 +33,15 @@ export const LoginPage = () => {
                 <i className="fa-solid fa-lock"></i>
                 <input type="password" placeholder="Password" name="password" />
               </div>
-              <div className="auth-input-field">
-                <button type="submit">Submit</button>
-              </div>
             </div>
+            <div className="auth-input-field">
+              <button className="login-button" type="submit">
+                Log In
+              </button>
+            </div>
+            <a className="register-link" href="/register">
+              Register
+            </a>
           </form>
         </div>
       </div>

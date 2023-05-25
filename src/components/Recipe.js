@@ -52,42 +52,26 @@ export const Recipe = () => {
               ))}
             </div>
             <div className="nutrition">
-              <div children className="nutritional-values">
-                <span>
-                  Kcal
-                  <br />
-                  {currentPost.nutrition.kcal}
-                </span>
-                <br />
-                <span>
-                  Fat
-                  <br /> {currentPost.nutrition.fat}
-                </span>
-                <br />
-                <span>
-                  Carbs
-                  <br /> {currentPost.nutrition.carbs}
-                </span>
-                <br />
-                <span>
-                  Sugars
-                  <br /> {currentPost.nutrition.sugars}
-                </span>
-                <br />
-                <span>
-                  Fibre
-                  <br /> {currentPost.nutrition.fibre}
-                </span>
-                <br />
-                <span>
-                  Protein
-                  <br /> {currentPost.nutrition.protein}
-                </span>
-                <br />
-                <span>
-                  Salt <br />
-                  {currentPost.nutrition.salt}
-                </span>
+              <div>
+                <h3> kCal</h3> <span>{currentPost.nutrition.kcal}</span>
+              </div>
+              <div>
+                <h3> Fat</h3> <span>{currentPost.nutrition.fat}</span>
+              </div>
+              <div>
+                <h3> Carbs</h3> <span>{currentPost.nutrition.carbs}</span>
+              </div>
+              <div>
+                <h3> Sugars</h3> <span>{currentPost.nutrition.sugars}</span>
+              </div>
+              <div>
+                <h3> Fibre</h3> <span>{currentPost.nutrition.fibre}</span>
+              </div>
+              <div>
+                <h3> Protein</h3> <span>{currentPost.nutrition.protein}</span>
+              </div>
+              <div>
+                <h3> Salt</h3> <span>{currentPost.nutrition.salt}</span>
               </div>
             </div>
           </main>

@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import ProtectedPage from "./pages/ProtectedPage";
 import RecipePage from "./pages/RecipePage";
 import { ForYou } from "./components/ForYou";
+import { Register } from "./components/Register";
 
 import "./App.css";
 
@@ -27,6 +28,7 @@ export default function App() {
               </RequireAuth>
             }
           />
+          <Route path="/register" element={<Register />} />
         </Route>
       </Routes>
     </AuthProvider>

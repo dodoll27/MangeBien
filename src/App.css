@@ -327,15 +327,21 @@ label {
 .nutrition {
   width: 150px;
 }
-.nutrition span {
-  display: inline-flex;
-  margin: 30px;
-  width: 60px;
-  height: 40px;
+.nutrition div {
   background-color: #d2e8b6;
-  text-align: center;
   color: #3f3f3f;
   font-size: small;
+  padding: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 60px;
+  padding-bottom: 7px;
+  border-radius: 7px;
+}
+.nutrition h3 {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0;
 }
 
 .recipe-actions {
@@ -363,11 +369,12 @@ label {
 }
 
 .auth-container {
-  height: auto;
-}
-.auth-background {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../public/images/thumbnail.jpeg);
   background-size: cover;
 }
+
 .foryou-profile {
   width: 280px;
   display: flex;
@@ -376,4 +383,56 @@ label {
 .foryou-profile img {
   width: 100%;
   height: auto;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.auth-form-box {
+  border-radius: 10px;
+  margin-right: 100px;
+  align-items: center;
+  background-color: #d9d9d9;
+}
+.auth-form-box input {
+  background-color: #e8e8e8;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+
+.auth-input-field {
+  display: flex;
+  align-items: center;
+}
+
+.login-button,
+.signup-button {
+  margin: 20px;
+  background-color: #42bc3f;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.auth-form-box a {
+  color: #486d47;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.auth-form-box a:hover {
+  color: #3f3f3f;
+  font-weight: 600;
 }
