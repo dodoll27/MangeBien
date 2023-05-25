@@ -1,24 +1,22 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { useForm } from "react-hook-form";
-import { isDisabled } from "@testing-library/user-event/dist/utils";
-import { useState } from "react";
 
 export const Register = () => {
   const navigate = useNavigate();
-  const location = useLocation();
   const auth = useAuth();
-  const from = location.state?.from?.pathname || "/";
+  const { register, handleSubmit } = useForm();
 
   function onSubmit(data) {
-    auth.signin(data.username, () => {
-      // Send them back to the page they tried to visit when they were
-      // redirected to the login page. Use { replace: true } so we don't create
-      // another entry in the history stack for the login page.  This means that
-      // when they get to the protected page and click the back button, they
-      // won't end up back on the login page, which is also really nice for the
-      // user experience.
-      navigate(from, { replace: true });
+    const newData = {
+      ...data,
+      ...{
+        image:
+          "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+      },
+    };
+    auth.register(newData, () => {
+      navigate("/login");
     });
   }
 
@@ -26,12 +24,20 @@ export const Register = () => {
     <div className="auth-container">
       <div className="wrapper">
         <div className="auth-form-box">
-          <form className="signin-form">
+          <form
+            className="signin-form"
+            onSubmit={handleSubmit((d) => onSubmit(d))}
+          >
             <h2>Sign Up</h2>
             <div className="auth-input-group">
               <div className="auth-input-field">
                 <i className="fa-solid fa-lock"></i>
-                <input type="text" placeholder="Name" name="name" />
+                <input
+                  type="text"
+                  placeholder="Name"
+                  name="name"
+                  {...register("name")}
+                />
               </div>
               <select className="auth-input-field">
                 <option value="vegetarian">Vegetarian</option>
@@ -46,11 +52,21 @@ export const Register = () => {
               </select>
               <div className="auth-input-field">
                 <i className="fa-regular fa-envelope"></i>
-                <input type="text" placeholder="E-mail" name="email" />
+                <input
+                  type="text"
+                  placeholder="E-mail"
+                  name="email"
+                  {...register("email")}
+                />
               </div>
               <div className="auth-input-field">
                 <i className="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Password" name="password" />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  {...register("password")}
+                />
               </div>
               <div className="auth-input-field">
                 <i className="fa-solid fa-lock"></i>
