@@ -30,6 +30,9 @@ export const Register = () => {
           >
             <h2>Sign Up</h2>
             <div className="auth-input-group">
+              <div className="sign-up-photo">
+                <input {...register("photo")} type="file" name="picture" />
+              </div>
               <div className="auth-input-field">
                 <i className="fa-solid fa-lock"></i>
                 <input

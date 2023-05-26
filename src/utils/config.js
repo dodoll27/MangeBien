@@ -67,6 +67,7 @@ export const posts = [
     image_full: "/images/food/vegan-chili.jpeg",
     name: "Vegan Chili",
     description: "viva mexico",
+    diet: "vegan",
     type: "saved",
     ingredients: [
       "2 tsp ground cumin",
@@ -106,6 +107,7 @@ export const posts = [
     name: "Mapo Tofu",
     creator: "future user",
     description: "20min recipe",
+    diet: "fast",
     type: "saved",
     ingredients: [
       "450g tofu",
@@ -147,6 +149,7 @@ export const posts = [
     name: "Hummus",
     creator: "@Ruxy",
     description: "libaneese food",
+    diet: ["vegan", " vegetarian"],
     type: "tried",
     ingredients: [
       "1 can chickpeas, drained",
@@ -180,6 +183,7 @@ export const posts = [
     name: "Saag Paneer",
     creator: "@Ruxy",
     description: "Keto recipe",
+    diet: ["vegetarian", " gluten free"],
     type: "made",
     ingredients: [
       " 2 tbsp ghee,or cooking oil",
@@ -217,6 +221,7 @@ export const posts = [
     name: "Tofu Scramble",
     creator: "@Ruxy",
     description: "vegan",
+    diet: "vegan",
     type: "saved",
     ingredients: [
       "  1 tbsp olive oil ",
@@ -253,6 +258,7 @@ export const posts = [
     name: "Vegan Chili",
     creator: "@Ruxy",
     description: "vegetarian",
+    diet: "vegetarian",
     type: "made",
     ingredients: [
       "500g mushrooms ",
@@ -285,6 +291,7 @@ export const posts = [
     name: " Chicken curry ",
     creator: "@Ruxy",
     description: "gluten-free meal",
+    diet: "gluten free",
     type: "tried",
     ingredients: [
       "1 large chicken, jointed, or 1.5kg bone-in chicken pieces",
@@ -321,9 +328,10 @@ export const posts = [
     id: 8,
     image: "/images/food/ny-cheesecake.jpeg",
     image_full: "/images/food/ny-cheesecake.jpeg",
-    name: "Vegan Chili",
+    name: "NY Cheesecake",
     creator: "@Ruxy",
-    description: "viva mexico",
+    description: "dessert",
+    diet: "vegetarian",
     type: "tried",
     ingredients: [
       "85g butter, plus extra for tin",
@@ -374,7 +382,8 @@ export const posts = [
     image_full: "/images/food/vegetarian-lasagna.jpeg",
     name: "Vegetarian lasagna",
     creator: "@Ruxy",
-    description: "viva mexico",
+    description: "Italia",
+    diet: "vegetarian",
     type: "tried",
     ingredients: [
       "9 dried lasagne sheets",
@@ -409,6 +418,7 @@ export const posts = [
     name: "Burrito",
     creator: "@Ruxy",
     description: "viva mexico",
+    diet: "sugar free",
     type: "tried",
     ingredients: [
       "2 tbsp sunflower oil",
@@ -444,3 +454,27 @@ export const posts = [
     },
   },
 ];
+
+export const getDietColor = (diet) => {
+  switch (diet) {
+    case "vegan":
+      return "coral";
+    case "vegetarian":
+      return "green";
+    case "paleo":
+      return "brown";
+    case "pescarian":
+      return "light-blue";
+    case "gluten free":
+      return "red";
+    case "mediterranean":
+      return "dark-blue";
+    case "keto":
+      return "yellow";
+    case "intermittent fasting":
+      return "purple";
+
+    default:
+      return "black";
+  }
+};

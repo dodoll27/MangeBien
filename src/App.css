@@ -436,3 +436,10 @@ label {
   color: #3f3f3f;
   font-weight: 600;
 }
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}

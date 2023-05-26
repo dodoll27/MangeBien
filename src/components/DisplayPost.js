@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { posts } from "../utils/config";
 import { useAuth } from "../hooks/useAuth";
+import { getDietColor } from "../utils/config";
 
 export const DisplayPost = ({ filterType }) => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export const DisplayPost = ({ filterType }) => {
 
   return (
     <div className="post-block">
-      {newPosts.map((item, index) => (
+      {newPosts.map((item, index, diet) => (
         <div
           key={index}
           className="small-div"
@@ -23,6 +24,10 @@ export const DisplayPost = ({ filterType }) => {
           </div>
           <h5>{item.name}</h5>
           <p>{item.description}</p>
+          <div
+            className="circle"
+            style={{ backgroundColor: getDietColor(posts.diet) }}
+          ></div>
         </div>
       ))}
     </div>
