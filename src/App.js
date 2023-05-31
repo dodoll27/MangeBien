@@ -5,8 +5,8 @@ import { LoginPage } from "./pages/LoginPage";
 import { RequireAuth } from "./components/RequireAuth";
 import HomePage from "./pages/HomePage";
 import RecipePage from "./pages/RecipePage";
-import { ForYou } from "./components/ForYou";
-import { Register } from "./components/Register";
+import { ForYou } from "./pages/ForYou";
+import { Register } from "./pages/Register";
 
 import "./App.css";
 

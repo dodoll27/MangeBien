@@ -17,10 +17,7 @@ export const Profile = ({ size, showUserInfo = true }) => {
           <div className="description">
             <h1>{user.name}</h1>
           </div>
-          <div className="green-button">
-            <button className="button green">Follow</button>
-            <button className="button green">Message</button>
-          </div>
+
           <div className="description">
             <p>{user?.description}</p>
           </div>

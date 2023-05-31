@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { posts } from "../utils/config";
 import { useAuth } from "../hooks/useAuth";
+import { posts } from "../utils/config";
 import { getDietColor } from "../utils/config";
 
 export const DisplayPost = ({ filterType }) => {
@@ -26,7 +26,7 @@ export const DisplayPost = ({ filterType }) => {
           <p>{item.description}</p>
           <div
             className="circle"
-            style={{ backgroundColor: getDietColor(posts.diet) }}
+            style={{ backgroundColor: getDietColor(item.diet) }}
           ></div>
         </div>
       ))}

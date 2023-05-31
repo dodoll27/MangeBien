@@ -12,6 +12,10 @@ function HomePage() {
     <div className="container">
       <aside>
         <Profile />
+        <div className="green-button">
+          <button className="button green">Follow</button>
+          <button className="button green">Message</button>
+        </div>
         <button className="back" onClick={() => navigate("/foryou")}>
           &#x21e6; ForYou
         </button>

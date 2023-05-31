@@ -1,18 +1,24 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 export const Register = () => {
   const navigate = useNavigate();
   const auth = useAuth();
   const { register, handleSubmit } = useForm();
+  const [avatar, setAvatar] = useState(null);
+
+  const onChange = (e) => {
+    const file = e.target.files[0];
+    setAvatar(file);
+  };
 
   function onSubmit(data) {
     const newData = {
       ...data,
       ...{
-        image:
-          "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+        image: avatar,
       },
     };
     auth.register(newData, () => {
@@ -31,7 +37,12 @@ export const Register = () => {
             <h2>Sign Up</h2>
             <div className="auth-input-group">
               <div className="sign-up-photo">
-                <input {...register("photo")} type="file" name="picture" />
+                <input
+                  {...register("photo")}
+                  type="file"
+                  name="picture"
+                  onChange={onChange}
+                />
               </div>
               <div className="auth-input-field">
                 <i className="fa-solid fa-lock"></i>
