@@ -3,7 +3,7 @@ import { useAuth } from "../hooks/useAuth";
 import { posts } from "../utils/config";
 import { getDietColor } from "../utils/config";
 
-export const DisplayPost = ({ filterType }) => {
+export const DisplayFeed = ({ filterType }) => {
   const navigate = useNavigate();
   const { user } = useAuth();
 
@@ -12,7 +12,7 @@ export const DisplayPost = ({ filterType }) => {
     : posts;
 
   return (
-    <div className="post-block-profile">
+    <div className="post-block-feed">
       {newPosts.map((item, index, diet) => (
         <div
           key={index}

@@ -68,7 +68,7 @@ export const posts = [
     image_full: "/images/food/vegan-chili.jpeg",
     name: "Vegan Chili",
     description: "viva mexico",
-    diet: "vegan",
+    diet: "vegetarian",
     type: "saved",
     ingredients: [
       "2 tsp ground cumin",
@@ -108,7 +108,7 @@ export const posts = [
     name: "Mapo Tofu",
     creator: "future user",
     description: "20min recipe",
-    diet: "fast",
+    diet: "vegan",
     type: "saved",
     ingredients: [
       "450g tofu",
@@ -150,7 +150,7 @@ export const posts = [
     name: "Hummus",
     creator: "@Ruxy",
     description: "libaneese food",
-    diet: ["vegan", " vegetarian"],
+    diet: "sugar free",
     type: "tried",
     ingredients: [
       "1 can chickpeas, drained",
@@ -184,7 +184,7 @@ export const posts = [
     name: "Saag Paneer",
     creator: "@Ruxy",
     description: "Keto recipe",
-    diet: ["vegetarian", " gluten free"],
+    diet: "vegan",
     type: "made",
     ingredients: [
       " 2 tbsp ghee,or cooking oil",
@@ -474,6 +474,8 @@ export const getDietColor = (diet) => {
       return "yellow";
     case "intermittent fasting":
       return "purple";
+    case "sugar free":
+      return "pink";
 
     default:
       return "black";
